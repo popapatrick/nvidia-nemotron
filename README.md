@@ -63,8 +63,9 @@ in **where the training reasoning comes from.**
 
 ### `nvidia-notebook-0.83.ipynb` — Teacher chain-of-thought distillation 
 
-Fine-tune on **natural chain-of-thought written by strong "teacher" models** (DeepSeek, Nemotron,
-GPT-class) solving the real competition puzzles. The key trick is **answer-consistency cleaning**:
+Fine-tune on **natural chain-of-thought written by strong "teacher" models** (DeepSeek,
+GPT-class) from dgxchen/nemotron-cot-tong dataset, solving the real competition puzzles. 
+The key trick is **answer-consistency cleaning**:
 a teacher trace is kept only when its final boxed answer matches ground truth; numeric traces that
 land just short of the required precision get a one-line rounding note, and genuine teacher errors
 are dropped. The model learns the teachers' fluent reasoning style and generalises well across all
@@ -153,8 +154,8 @@ notebooks also run locally if you have the model and data on disk.
 ## Notes & attribution
 
 - The teacher chain-of-thought used by the **0.83** and **0.80** notebooks comes from a publicly
-  available, permissively licensed teacher-CoT dataset for this competition. If you reuse those
-  notebooks, credit the upstream dataset and keep its license.
+  available, permissively licensed teacher-CoT dataset for this competition (dgxchen/nemotron-cot-tong).
+  If you reuse thosenotebooks, credit the upstream dataset and keep its license.
 - The **0.74** notebook uses **no external data** — its corpus is generated entirely from the
   competition's own `train.csv`, so it is fully reproducible from the competition materials alone.
 - The base model and competition data are subject to NVIDIA's and Kaggle's respective terms.
