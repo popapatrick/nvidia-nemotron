@@ -68,7 +68,7 @@ The key trick is **answer-consistency cleaning**:
 a teacher trace is kept only when its final boxed answer matches ground truth; numeric traces that
 land just short of the required precision get a one-line rounding note, and genuine teacher errors
 are dropped. The model learns the teachers' fluent reasoning style and generalises well across all
-six categories. This adapter can be downloaded from Hugging Face at **popapatrick/nemotron-3-nano-reasoning-lora**.
+six categories. This adapter can be downloaded from Hugging Face at `popapatrick/nemotron-3-nano-reasoning-lora`.
 
 > **Why it wins:** natural teacher reasoning transfers better than any templated/mechanical trace —
 > the model learns the *skill*, not a fixed output format.
