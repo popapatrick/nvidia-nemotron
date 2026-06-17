@@ -61,14 +61,14 @@ All three share the same skeleton — load the bf16 base, attach a rank-32 LoRA 
 MLP projections, supervised-fine-tune for one epoch, and package the adapter. They differ entirely
 in **where the training reasoning comes from.**
 
-### `nvidia-notebook-0.83.ipynb` — Teacher chain-of-thought distillation ⭐ best
+### `nvidia-notebook-0.83.ipynb` — Teacher chain-of-thought distillation 
 
 Fine-tune on **natural chain-of-thought written by strong "teacher" models** (DeepSeek, Nemotron,
 GPT-class) solving the real competition puzzles. The key trick is **answer-consistency cleaning**:
 a teacher trace is kept only when its final boxed answer matches ground truth; numeric traces that
 land just short of the required precision get a one-line rounding note, and genuine teacher errors
 are dropped. The model learns the teachers' fluent reasoning style and generalises well across all
-six categories.
+six categories. This adapter can be downloaded from Hugging Face at popapatrick/nemotron-3-nano-reasoning-lora.
 
 > **Why it wins:** natural teacher reasoning transfers better than any templated/mechanical trace —
 > the model learns the *skill*, not a fixed output format.
