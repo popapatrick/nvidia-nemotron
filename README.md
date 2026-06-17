@@ -63,8 +63,7 @@ in **where the training reasoning comes from.**
 
 ### `nvidia-notebook-0.83.ipynb` — Teacher chain-of-thought distillation 
 
-Fine-tune on **natural chain-of-thought written by strong "teacher" models** (DeepSeek,
-GPT-class) from dgxchen/nemotron-cot-tong dataset, solving the real competition puzzles. 
+Fine-tune on dataset containing **natural chain-of-thought written by LLM teacher models** from dgxchen/nemotron-cot-tong, solving the real competition puzzles. 
 The key trick is **answer-consistency cleaning**:
 a teacher trace is kept only when its final boxed answer matches ground truth; numeric traces that
 land just short of the required precision get a one-line rounding note, and genuine teacher errors
